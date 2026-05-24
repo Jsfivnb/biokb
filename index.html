@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioKB - 生物学AI知识库生成器</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="src/styles/variables.css">
+  <link rel="stylesheet" href="src/styles/base.css">
+  <link rel="stylesheet" href="src/styles/layout.css">
+  <link rel="stylesheet" href="src/styles/components.css">
+  <link rel="stylesheet" href="src/styles/animations.css">
+</head>
+<body>
+
+  <canvas id="particleCanvas"></canvas>
+
+  <div class="app-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="glass-card sidebar-header">
+        <div class="logo-icon">\uD83E\uDDEC</div>
+        <div class="logo-text">
+          <h2>BioKB</h2>
+          <span>Biology Knowledge Engine</span>
+        </div>
+      </div>
+
+      <div class="search-wrap">
+        <div class="search-input-wrap">
+          <span class="search-icon">\uD83D\uDD0D</span>
+          <input type="text" class="search-input" id="searchInput" placeholder="搜索基因、蛋白质、通路...">
+        </div>
+      </div>
+
+      <div class="category-pills" id="categoryPills"></div>
+
+      <div class="glass-card knowledge-list" id="knowledgeList"></div>
+
+      <div class="glass-card sidebar-footer">
+        <div class="generating-indicator">
+          <span class="pulse-dot"></span>
+          <span>AI 引擎运行中</span>
+        </div>
+        <span style="font-size:0.7rem;color:var(--text-muted);margin-left:auto;" id="kbCount">12 条知识</span>
+      </div>
+    </aside>
+
+    <!-- MAIN PANEL -->
+    <main class="main-panel">
+      <div class="stats-bar" id="statsBar"></div>
+
+      <div class="glass-card preview-panel">
+        <div class="preview-header">
+          <div class="preview-title-area">
+            <div class="preview-title" id="previewTitle">选择一条知识以预览</div>
+            <div class="preview-tags" id="previewTags"></div>
+          </div>
+          <div class="preview-actions">
+            <button class="icon-btn" title="复制内容" onclick="copyContent()">\uD83D\uDCCB</button>
+            <button class="icon-btn" title="重新生成" onclick="regenerateKnowledge()">\uD83D\uDD04</button>
+            <button class="icon-btn" title="导出" onclick="exportKnowledge()">\uD83D\uDCE5</button>
+          </div>
+        </div>
+        <div class="preview-content" id="previewContent">
+          <div class="empty-state">
+            <div class="empty-icon">\uD83D\uDCDA</div>
+            <div style="font-weight:600;">浏览知识库</div>
+            <div style="font-size:0.8rem;">从左侧选择一个条目以查看详细内容</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="charts-panel">
+        <div class="glass-card chart-card">
+          <div class="chart-card-header">
+            <div class="chart-card-title">
+              <span class="chart-dot green"></span> 研究活动趋势
+            </div>
+            <div class="chart-legend">近12个月</div>
+          </div>
+          <div class="chart-wrap"><canvas id="chartTrend"></canvas></div>
+        </div>
+        <div class="glass-card chart-card">
+          <div class="chart-card-header">
+            <div class="chart-card-title">
+              <span class="chart-dot cyan"></span> 基因表达水平
+            </div>
+            <div class="chart-legend">TPM 归一化</div>
+          </div>
+          <div class="chart-wrap"><canvas id="chartExpression"></canvas></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="toastContainer"></div>
+
+  <!-- Data Layer -->
+  <script src="src/scripts/data/categories.js"></script>
+  <script src="src/scripts/data/knowledge.js"></script>
+  <script src="src/scripts/data/chartData.js"></script>
+
+  <!-- Core Layer -->
+  <script src="src/scripts/core/state.js"></script>
+  <script src="src/scripts/core/particles.js"></script>
+  <script src="src/scripts/core/utils.js"></script>
+
+  <!-- UI Layer -->
+  <script src="src/scripts/ui/renderers.js"></script>
+  <script src="src/scripts/ui/charts.js"></script>
+  <script src="src/scripts/ui/actions.js"></script>
+
+  <!-- App Entry -->
+  <script src="src/scripts/app.js"></script>
+</body>
+</html>

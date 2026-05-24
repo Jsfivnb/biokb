@@ -1,0 +1,34 @@
+:root {
+  --bg-deep: #060b14;
+  --bg-card: rgba(12, 20, 40, 0.7);
+  --bg-card-hover: rgba(18, 28, 52, 0.85);
+  --border: rgba(0, 255, 136, 0.12);
+  --border-active: rgba(0, 255, 136, 0.35);
+  --accent: #00ff88;
+  --accent-cyan: #00d4ff;
+  --accent-purple: #a855f7;
+  --accent-pink: #ff6b9d;
+  --text: #e2e8f0;
+  --text-dim: #8899aa;
+  --text-muted: #5a6a7a;
+  --red-glow: rgba(0, 255, 136, 0.15);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-xs: 6px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.badge-genomics { background: rgba(0,212,255,0.12); color: var(--accent-cyan); }
+.badge-proteomics { background: rgba(168,85,247,0.12); color: var(--accent-purple); }
+.badge-cell { background: rgba(0,255,136,0.12); color: var(--accent); }
+.badge-micro { background: rgba(255,107,157,0.12); color: var(--accent-pink); }
+.badge-ecology { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.badge-evolution { background: rgba(244,114,182,0.12); color: #f472b6; }
+
+.stat-icon.green { background: rgba(0,255,136,0.1); color: var(--accent); }
+.stat-icon.cyan { background: rgba(0,212,255,0.1); color: var(--accent-cyan); }
+.stat-icon.purple { background: rgba(168,85,247,0.1); color: var(--accent-purple); }
+.stat-icon.pink { background: rgba(255,107,157,0.1); color: var(--accent-pink); }
+
+.chart-dot.green { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+.chart-dot.cyan { background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan); }
