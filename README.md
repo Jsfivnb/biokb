@@ -8,8 +8,8 @@
 <h1 align="center">🧬 BioKB — Biology AI Knowledge Engine</h1>
 
 <p align="center">
-  <strong>一个纯前端的 AI 驱动生物学知识库生成器</strong><br>
-  零依赖后端 · 零数据库 · 零部署配置 · 打开即用
+  <strong>一个 AI 驱动生物学知识库生成器</strong><br>
+   打开即用
 </p>
 
 <p align="center">
